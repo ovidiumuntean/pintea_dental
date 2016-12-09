@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Data Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Download Link</th>
+      <th>Description</th>
+      <th>Date added</th>
+	  <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_files.each do |data_file| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= data_file.patient.first_name %></td>
+        <td><%= link_to "Download File", data_file.name_url %></td>
+        <td><%= data_file.description %></td>
+        <td><%= data_file.created_at %></td>
+		<td><%= image_tag(data_file.name,:size=>"100x70") %></td>
+        <td><%= link_to 'Show', data_file %></td>
+        <td><%= link_to 'Edit', edit_data_file_path(data_file) %></td>
+        <td><%= link_to 'Destroy', data_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data file', new_data_file_path %>

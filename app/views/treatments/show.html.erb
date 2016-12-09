@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @treatment.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @treatment.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@treatment.price, :unit => "€ ") %>
+</p>
+
+<p>
+	<% @treatment.tooth_treatments.each do |tooth_treatment| %>
+		<%= tooth_treatment.treatment_id %>
+		<br \>
+	<% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_treatment_path(@treatment) %> |
+<%= link_to 'Back', treatments_path %>

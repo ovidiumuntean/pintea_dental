@@ -1,0 +1,225 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap-datepicker
+ *= require rails_bootstrap_forms
+ *= require_tree .
+ */
+
+ 
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+/*some elements have default paddings and margins. thats why below two statements*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+h1{
+	font: bold 20px Arial, Helvetica, sans-serif;
+}
+h2{
+	font: bold 20px Arial, Helvetica, sans-serif;
+}
+
+
+/*some browsers do not recogonize HTML5 tags or treat them as
+inline elements.
+Block elements are always positioned one under the other.
+Inline elements are positioned left to right
+To make sure this website is compatible with all browsers, 
+we take all below html5 tags and make sure they are displayed as blocked elements
+*/
+header, section, footer, aside, nav, article, hgroup{
+	display: block;
+}
+body{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	margin: auto;
+}
+
+
+ #banner {
+  /* border: 1px solid #17202A; */
+  background: #34495E;
+  padding: 20px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+
+  img {
+    float: left;
+  }
+}
+
+
+#columns {
+  background: yellow;
+
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
+
+//#START:side
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: yellow;
+
+/* START_HIGHLIGHT */
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color: #17202A;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+/* END_HIGHLIGHT */
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          font-size: small;
+        }
+      }
+    }
+  }
+//#END:side
+} #end columns
+
+#top_menu {
+  float: right;
+}
+
+#top_menu {
+  background-color: #808B96;
+  color: #17202A;
+}
+
+#top_menu ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 5px;
+  font: bold 14px Arial, Helvetica, sans-serif;
+}
+
+#top_menu ul li a {
+   border: 0px solid #17202A;
+   background-color: #808B96;
+   padding: 5px;
+   opacity: 1;
+   text-decoration: none;
+   font-size: 14pt;
+}
+
+#top_menu ul li a:visited {
+  color: white;
+}
+
+#top_menu ul li a:hover {
+  opacity: 1;
+  background-color: #2C3E50;
+  border: 0px solid #0000ff;
+  color: white;
+  }
+  
+#float_right{
+	float: right;
+}
+
+#float_left{
+	float: left;
+}
+  
+.list_line_even {
+	background: #FAEBD7;
+}
+
+.list_line_odd {
+	background: #FAFEFA;
+}
+
+/*
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+*/
+/*
+.hover1{
+   border: 0px solid #17202A;
+   background-color: #566573;
+   padding: 0px;
+   opacity: 1;
+   text-align: center;
+   text-decoration: none;
+   font-size: 14pt;
+   color: #17202A;
+   }
+.hover1:hover{
+  opacity: 1;
+  background-color: #33AECA;
+  border: 0px solid #0000ff;
+  color: #17202A;
+  }
+*/
+
+@media (min-width: 858px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 780px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 702px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 724px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 623px) {
+    html {
+        font-size: 8px;
+    }
+}

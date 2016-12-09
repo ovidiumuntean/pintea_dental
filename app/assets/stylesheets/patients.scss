@@ -1,0 +1,105 @@
+// Place all the styles related to the patients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	width: 85%;
+}
+
+div p {
+	font: bold 14px Arial, Helvetica, sans-serif;
+}
+
+table{
+	border-collapse: collapse;
+	font-size: 12pt; 
+	font-family: Times New Roman; 
+}
+
+table tr td {
+	padding: 10px;
+}
+
+h2 {
+font: bold 24px Arial, Helvetica, sans-serif;
+color: red;
+}
+
+thead {
+	text-align: left;
+	background: #00308f;
+	color: #FFF;
+}
+	
+thead th {
+	padding: 10px;
+}
+	
+#patient_section{
+	border: 0px solid blue;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	/* -webkit-box-direction: reverse; */
+	
+	/*-webkit-box-pack: center;*/
+	/* -webkit-box-pack: start; */
+		/* -webkit-box-pack: end; */
+	
+	-webkit-box-align:center;
+}
+#left_details{
+	border: 0px solid red;
+	background: white;
+	padding: 10px;
+	margin: 0px;
+	/*-webkit-box-ordinal-group: 3;	*/
+	/*width: 60px;*/
+	-webkit-box-flex:1;
+}
+#right_details{
+	border: 0px solid red;
+	background: white;
+	padding: 20px;
+	margin: 0px;
+	/*-webkit-box-ordinal-group: 1;	*/
+	/*width: 60px;*/
+	-webkit-box-flex:1;
+}
+
+#reg_section{
+	background-image: url("registration.jpg");
+	background-repeat: no-repeat;
+	border: 0px solid blue;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	/* -webkit-box-direction: reverse; */
+	
+	/*-webkit-box-pack: center;*/
+	/* -webkit-box-pack: start; */
+		/* -webkit-box-pack: end; */
+	
+	-webkit-box-align:center;
+}
+
+.box_form{
+	border: 2px solid red;
+	background: #F4F6F6;
+	padding: 20px;
+	margin: 10px;
+	margin-top: 20px;
+	/*-webkit-box-ordinal-group: 3;	*/
+	/*width: 60px;*/
+	-webkit-box-flex:1;
+	-webkit-border-radius: 25px;
+	-webkit-box-shadow: rgb(100,100,100) 5px 5px 8px;
+	text-align: left;
+}
+
+.box_form form { 
+	display: inline; 
+}
+
+#patient_main{
+	padding: 20px;
+	margin: 10px;
+}

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Country:</strong>
+  <%= @country.name %>
+</h2>
+
+<p>
+  <strong>Region:</strong>
+  <%= @country.region.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patients</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @country.patients.each do |patient| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= patient.first_name %></td>
+		<td><%= patient.surname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

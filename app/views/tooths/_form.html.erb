@@ -1,0 +1,33 @@
+<%= form_for(@tooth) do |f| %>
+  <% if @tooth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tooth.errors.count, "error") %> prohibited this tooth from being saved:</h2>
+
+      <ul>
+      <% @tooth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :side_id %><br>
+    <%= f.collection_select :side_id, Side.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :tooth_type %><br>
+    <%= f.text_field :tooth_type %>
+  </div>
+  <div class="field">
+    <%= f.label :roots_number %><br>
+    <%= f.number_field :roots_number %>
+  </div>
+  <div class="field">
+    <%= f.label :canals_number %><br>
+    <%= f.number_field :canals_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

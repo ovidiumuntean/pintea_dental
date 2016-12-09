@@ -1,0 +1,73 @@
+	<script>
+		$('#datepicker').datepicker({format: 'dd/mm/yyyy'});
+	</script>
+<section id="reg_section">
+	<div class="box_form">
+		<%= bootstrap_form_for(@patient, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-8") do |f| %>
+		  <% if @patient.errors.any? %>
+			<div id="error_explanation">
+			  <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+			  <ul>
+			  <% @patient.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			  <% end %>
+			  </ul>
+			</div>
+		  <% end %>
+
+		  <div class="field">
+			<%= f.text_field :cnp, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :first_name, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :surname, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.collection_select :gender_id, Gender.all, :id, :name, {} ,  {style: 'float: right;'} %>
+		  </div>
+		  <div class="field">
+			<%= f.date_field :birthday %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :insurance, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :address1, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :address2, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :city, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :county, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :postal_code, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.collection_select :country_id, Country.all, :id, :name, {} ,  {style: 'float: right;'} %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :phone, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.text_field :email, style: 'float: right;' %>
+		  </div>
+		  <div class="field">
+			<%= f.password_field :password, style: 'float: right;' %>
+		  </div>
+			<div class="field">
+			<%= f.password_field :password_confirmation, style: 'float: right;' %>
+		  </div>
+		  <div class="actions" align="center">
+			<%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</section>
+

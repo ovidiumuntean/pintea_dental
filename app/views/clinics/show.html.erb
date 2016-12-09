@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clinic.name %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @clinic.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @clinic.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @clinic.city %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @clinic.county %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @clinic.postal_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @clinic.country.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @clinic.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @clinic.email %>
+</p>
+
+<p>
+  <strong>Date registred:</strong>
+  <%= @clinic.date_registred %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @clinic.employee.first_name %>
+</p>
+
+<h2> Doctors </h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Surname</th>
+    </tr>
+  </thead>
+
+  <tbody class="table">
+    <% @clinic.employees.each do |employee| %>
+      <tr>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.surname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@clinic.address1}%2C#{@clinic.city}%2C#{@clinic.country}" %>
+
+<% if employeesigned_in? %>
+	<%= link_to 'Edit', edit_clinic_path(@clinic) %>
+<% end %>
+<%= link_to 'Back', clinics_path %>

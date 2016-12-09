@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pintea Dental</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="big_wrapper">
+	<header id="banner">
+		<%= image_tag("dentalBanner.jpg", :size => "100x50") %>
+		<%= "Smile" %>
+	</header>
+	<% flash.each do |key, value| %>
+		<div class="flash <%= key %>">
+			<%= value %>
+		</div>
+	<% end %>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dental Clinic</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><%=link_to "Home",root_path%></li>
+				<li><%=link_to "About", clinics_path %></li>
+				<li><%=mail_to "stefan.pintean@gmail.com","Contact us"%></li>
+				<% if !employeesigned_in? %>
+					<% if !signed_in? %>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+							<%= link_to patients_registration_path do %>
+								<span class="glyphicon glyphicon-user"></span>
+								Sign Up
+							<% end %>
+							</li>
+							<li>
+							<%= link_to login_path do %>
+								<span class="glyphicon glyphicon-log-in"></span>
+								Login
+							<% end %>
+							</li>
+							<li>
+							<%= link_to employeelogin_path do %>
+								<span class="glyphicon glyphicon-log-in"></span>
+								Admin Login
+							<% end %>
+							</li>
+						</ul>
+					<% else signed_in? %>
+						<li><%= link_to "Edit details", edit_patient_path(@current_patient) %></li>
+						<li><%= link_to "Appointments", appointments_path %></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li style="color:white;">Signed in as <%=@current_patient.first_name %></li>
+							<li><%= link_to "Sign Out", logout_path %></li>
+						</ul>
+					<% end %>
+				<% else employeesigned_in? %>
+					<li><%=link_to "Data Files", data_files_path %></li>
+					<li><%=link_to "Patients", patients_path%></li>
+					<li><%=link_to "Employees", employees_path%></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li style="color:white;">Signed in as <%=@current_employee.first_name %></li>
+						<li><%= link_to "Sign Out", employeelogout_path %></li>
+					</ul>
+				<% end %>
+            </ul>
+			<%= render 'patients/search' %>     
+        </div>
+    </nav>
+
+<%= yield %>
+
+</div>
+</body>
+</html>

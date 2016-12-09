@@ -1,0 +1,130 @@
+
+/*some elements have default paddings and margins. thats why below two statements*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+h1{
+	ont: bold 20px Arial, Helvetica, sans-serif;
+}
+h2{
+	font: bold 12px Arial, Helvetica, sans-serif;
+}
+/*some browsers do not recogonize HTML5 tags or treat them as
+inline elements.
+Block elements are always positioned one under the other.
+Inline elements are positioned left to right
+To make sure this website is compatible with all browsers, 
+we take all below html5 tags and make sure they are displayed as blocked elements
+*/
+header, section, footer, aside, nav, article, hgroup{
+	display: block;
+}
+body{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+}
+#big_wrapper{
+	margin: 20px 0px;
+	display:-webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-flex: 1;
+}
+
+#new_div{
+	display:-webkit-box;
+	-webkit-box-orient: horizontal;
+}
+#main_section{
+	border: 0px solid blue;
+	-webkit-box-flex: 1;
+	margin: 20px;
+	padding: 20px;
+}
+#side_news{
+	border: 0px solid red;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 30px;
+	background: #66CCCC;
+}
+#the_footer{
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid green;
+}
+article{
+	border: 0px solid red;
+	padding: 20px;
+	margin-bottom: 15px;
+}
+article footer{
+	text-align: right;
+}
+
+#kid1{
+	border: 2px solid red;
+	padding: 10px;
+	margin: 5px;
+	/*-webkit-box-ordinal-group: 3;	*/
+	/*width: 60px;*/
+	-webkit-box-flex:1;
+	background-color: grey;
+}
+
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+#mommy{
+	border: 2px solid blue;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	/* -webkit-box-direction: reverse; */
+	/* width: 700px; */
+	/*-webkit-box-pack: center;*/
+	/* -webkit-box-pack: start; */
+		/* -webkit-box-pack: end; */
+	height: 300px;
+	-webkit-box-align:center;
+}
+
+div {
+    display: block;
+}
+
+.clearer {
+    clear: both;
+}
+
+.options_wrapper {
+    max-width: 1160px;
+}
+
+.size_wrapper {
+    max-width: 1140px;
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0px auto;
+}
+
+.options a {
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    width: 23%;
+    height: 120px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #2b4258;
+    color: #fff;
+    text-decoration: none;
+    float: left;
+    margin: 9px 1%;
+}

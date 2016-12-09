@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  side_id: 1
+  tooth_type: MyString
+  roots_number: 1
+  canals_number: 1
+
+two:
+  side_id: 1
+  tooth_type: MyString
+  roots_number: 1
+  canals_number: 1

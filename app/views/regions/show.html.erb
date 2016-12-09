@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Region:</strong>
+  <%= @region.name %>
+</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th><h2> Countries</h2></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @region.countries.each do |country| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= country.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_region_path(@region) %> |
+<%= link_to 'Back', regions_path %>

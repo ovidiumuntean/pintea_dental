@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tooth Treatments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tooth</th>
+      <th>Treatment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tooth_treatments.each do |tooth_treatment| %>
+      <tr>
+        <td><%= tooth_treatment.tooth.tooth_type %></td>
+        <td><%= tooth_treatment.treatment.name %></td>
+        <td><%= link_to 'Show', tooth_treatment %></td>
+        <td><%= link_to 'Edit', edit_tooth_treatment_path(tooth_treatment) %></td>
+        <td><%= link_to 'Destroy', tooth_treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tooth treatment', new_tooth_treatment_path %>

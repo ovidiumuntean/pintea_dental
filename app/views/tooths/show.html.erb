@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Side:</strong>
+  <%= @tooth.side.name %>
+</p>
+
+<p>
+  <strong>Tooth type:</strong>
+  <%= @tooth.tooth_type %>
+</p>
+
+<p>
+  <strong>Roots number:</strong>
+  <%= @tooth.roots_number %>
+</p>
+
+<p>
+  <strong>Canals number:</strong>
+  <%= @tooth.canals_number %>
+</p>
+
+<h2> Treatments</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Treatment Id</th>
+      <th>Date Treated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tooth.tooth_treatments.each do |tooth_treatment| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= tooth_treatment.treatment_id %></td>
+        <td><%= tooth_treatment.date_treatead %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_tooth_path(@tooth) %> |
+<%= link_to 'Back', tooths_path %>

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @side.name %>
+</p>
+
+<p>
+	<% @side.tooths.each do |tooth| %>
+		<%= tooth.tooth_type %>
+		<br \>
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_side_path(@side) %> |
+<%= link_to 'Back', sides_path %>

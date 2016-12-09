@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @appointment.patient.first_name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @appointment.employee.first_name %>
+</p>
+<h2> Tooth Treatments</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Treatment</th>
+				<th>Tooth</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @appointment.appointment_treatments.each do |appointment_treatment| %>
+				<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+					<td><%= appointment_treatment.tooth_treatment.treatment.name %></td>
+					<td><%= appointment_treatment.tooth_treatment.tooth.tooth_type %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

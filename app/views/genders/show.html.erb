@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Gender:</strong>
+  <%= @gender.name %>
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patients</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gender.patients.each do |patient| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= patient.first_name %></td>
+		<td><%= patient.surname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_gender_path(@gender) %> |
+<%= link_to 'Back', genders_path %>

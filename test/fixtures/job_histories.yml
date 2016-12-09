@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  end_date: 2016-10-07
+  job_title: MyString
+  clinic_id: 1
+
+two:
+  employee_id: 1
+  end_date: 2016-10-07
+  job_title: MyString
+  clinic_id: 1

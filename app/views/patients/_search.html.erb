@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+<%= form_tag(search_path, method: :get, :class => 'navbar-form navbar-left') do %> <!-- search_path here is the name you used for-->
+	<div class="form-group">
+		<%= text_field_tag(:query, params[:query]) %> <!-- the route in the routes.rb file-->
+	</div>
+	<%= submit_tag "Search", :class=>'btn btn-default' %>
+<% end %>

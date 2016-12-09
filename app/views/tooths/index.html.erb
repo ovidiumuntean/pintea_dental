@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tooths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Side</th>
+      <th>Tooth type</th>
+      <th>Roots number</th>
+      <th>Canals number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tooths.each do |tooth| %>
+      <tr>
+        <td><%= tooth.side.name %></td>
+        <td><%= tooth.tooth_type %></td>
+        <td><%= tooth.roots_number %></td>
+        <td><%= tooth.canals_number %></td>
+        <td><%= link_to 'Show', tooth %></td>
+        <td><%= link_to 'Edit', edit_tooth_path(tooth) %></td>
+        <td><%= link_to 'Destroy', tooth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tooth', new_tooth_path %>

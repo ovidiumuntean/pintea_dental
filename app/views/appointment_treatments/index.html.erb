@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<% if signed_in? or employeesigned_in? %>
+  <h1>Listing Appointment Treatments</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tooth treatment</th>
+        <th>Appointment Date&Time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @appointment_treatments.each do |appointment_treatment| %>
+        <% if appointment_treatment.appointment.patient_id == @current_patient.id or employeesigned_in? %>
+          <tr>
+            <td><%= appointment_treatment.tooth_treatment.treatment.name %></td>
+            <td><%= appointment_treatment.appointment.date %></td>
+            <td><%= link_to 'Show', appointment_treatment %></td>
+            <td><%= link_to 'Edit', edit_appointment_treatment_path(appointment_treatment) %></td>
+            <td><%= link_to 'Destroy', appointment_treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Appointment treatment', new_appointment_treatment_path %>
+<% else  %>
+  <%= link_to 'Log In', login_path %>
+<% end %>

@@ -1,0 +1,52 @@
+
+<div style="overflow-x:auto;"> 
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Employees</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Surname</th>
+      <th>Gender</th>
+      <th>Birthday</th>
+      <th>Job title</th>
+      <th>Hire date</th>
+      <th>City</th>
+      <th>Postal code</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Clinic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.surname %></td>
+        <td><%= employee.gender.name %></td>
+        <td><%= employee.birthday %></td>
+        <td><%= employee.job_title %></td>
+        <td><%= employee.hire_date %></td>
+        <td><%= employee.city %></td>
+        <td><%= employee.postal_code %></td>
+        <td><%= employee.country.name %></td>
+        <td><%= employee.phone %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.clinic.name %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>
+</div>

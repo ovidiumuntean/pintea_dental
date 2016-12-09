@@ -1,0 +1,108 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @employee.first_name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @employee.surname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @employee.gender.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= age(@employee.birthday) %> years
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @employee.job_title %>
+</p>
+
+<p>
+  <strong>Hire date:</strong>
+  <%= @employee.hire_date %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @employee.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @employee.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @employee.city %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @employee.county %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @employee.postal_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @employee.country.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @employee.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <strong>Clinic:</strong>
+  <%= @employee.clinic.name %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @employee.password_digest %>
+</p>
+
+<p>
+	<% @employee.job_histories.each do |job_history| %>
+		<%= job_history.end_date %>
+		<br \>
+	<% end %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employment History</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee.job_histories.each do |job_history| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= job_history.employee.hire_date %></td>
+		<td><%= job_history.end_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
